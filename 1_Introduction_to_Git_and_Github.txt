@@ -1,0 +1,33 @@
+Git : 
+
+   1) Git is a version control system whch allows us to track the code changes in our project.
+   2) Through git u can get the following advantages :
+
+        a) You can version ur code that means u have the history of code changes.
+        b) You can easily revert back to ur previous code easily. Because u have history of changes.
+        c) You can compare the latest version of ur code with the fresly made features.
+        d) We can use git for contect switching. Let's say u are working for new feature  and ur previous 
+           version is in production and it has some bug, then u can save current version and go back for
+           previous version and fix that bug and then revert back to current version.
+
+        e) Through git u can make code review for all of ur teamates.
+
+
+Github :
+
+
+    1) Github is web hosting service for git repositories. It is a cloub base storage service.
+    2) Through github u can maintain backup of ur code. 
+    3) Through github itself u can share ur code with others (That means other teammates)
+
+
+The main difference between git and github is :
+
+    1) Git is command line interface (Software). Github is a web-based service.
+    2) Git is used for tracking code changes. Github is used for hosting git repositories. And Github 
+       provides web interface tto view chnages in files.
+    3) We can use git without github. But we cannot use github without git.
+    4) If u are doing ur project alone and don't want to collaborate with others then u can use git only.
+       Otherwise u can use both git and github.
+
+

@@ -6,7 +6,7 @@ Git :
         a) You can version ur code that means u have the history of code changes.
         b) You can easily revert back to ur previous code easily. Because u have history of changes.
         c) You can compare the latest version of ur code with the fresly made features.
-        d) We can use git for contect switching. Let's say u are working for new feature  and ur previous 
+        d) We can use git for context switching. Let's say u are working for new feature  and ur previous 
            version is in production and it has some bug, then u can save current version and go back for
            previous version and fix that bug and then revert back to current version.
 

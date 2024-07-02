@@ -1,0 +1,154 @@
+Now Let's see the basic workflow of git and github.
+
+Basic workflow :
+
+    1) You can create a repository by using both git and github.But creating a repository using github is 
+       very easy.
+
+       To create a repository, u first need to click on new repository button. Then name the repository and
+       provide the description of the repository and then add the following files if u want.
+
+           a) ReadMe.md file
+           b) ingnore .gitignore file
+           c) Add licence 
+
+       Then click on submit button, then repository is created.
+
+    
+    2) To add files into that github repository we can use two methods. 
+
+            a) First clone the repository by using this command.
+
+               git clone <repository_link (either https or ssh)>
+
+            b) Then u can now add files into it easily. This is first method.
+
+            c) Second method is, we can create the repository in local by using this command.
+
+               git init
+
+               git init : 'git init' is a command in Git that initializes a new Git repository. When u run
+                          'git init' in a directory, it creates a new hidden directory named '.git' inside
+                          that directory.This '.git' directory contains all the metadata and repository 
+                          data needed for version control, including subdirectories for objects, refs, 
+                          and template files.
+
+            d) If u create the repository by using any of the method then a hidden '.git' file is created
+               in that directory which is used to track the changes.
+
+            e) So this is the two methods to creates that '.git' directory. After this entire process is
+               same.
+
+   3) Now before going to the next steps let's see the about staging area in git.
+
+      Staging Area : The staging area is a crucial part in git workflow which acts as intermediatory 
+                     between current working directory and repository history (Commits). Let's break
+                     down its functionality :
+
+
+                     a) Working Directory : The working directory is where u make changes to ur project
+                                            files. This is where u edit, create , delete and move files.
+
+                     b) Stagging Area : The staging area (also known as index) is where u prepare changes
+                                        before commiting them.It's simply like a clipboard where u gather
+                                        all the changes u want to include in the next commit.Changes in 
+                                        working directory is not automatically added into staging area.
+                                        we need to explicitly add them to staging area.
+
+                     c) Local Repository : This is where all commits are stored. Each commit is a snapshot
+                                          of ur project at a particular point of time.
+
+
+   4) Now let's see how to add the modifications to the stagging area and then to  local and github 
+      repository.
+
+      Before adding lets see status of our files.
+
+      Working Directory     Staging area      Local Repository         Github Repository
+         Changed               Empty             Empty                       Empty
+
+
+      So to add modifications into staging area we use this command.
+
+      git add <file_name> : It adds file name mentioned to staging area.
+
+      git add . : This command adds all files present in the current directory to staging area.
+
+      Now let' see status of our files.
+
+      Working Directory     Staging area      Local Repository         Github Repository
+         Changed             Files added             Empty                    Empty
+
+      Until this point files are ready commit. These are not commited yet. This intermediatory is only
+      because if u mistakenly commited a file direclty then u can make that single file uncommit. So
+      through this staging area we can check what are the files that are ready to commit.
+
+      After adding files to staging area, the next step is to add changes to local repository which is
+      under hidden '.git' directory.This can be done by using the following command.
+
+      git commit -m "First Commit"
+
+      Here -m indicates a message associated for that commit or description about the changes made in 
+      this commit.
+
+      Now let's see the status.
+
+      Working Directory     Staging area      Local Repository         Github Repository
+         Changed             Files added         Files added                 Empty
+
+   5) Until now we have made all the changes to the files and commited those files and these new version
+      is saved in local repository. Now we need to made these chages available to the organization by 
+      pushing it itno the github.To push the files into github we use these command.
+
+      The 'git push' command is used to push the content of local repository to remote repository. But 
+      there is some difference between the ' git push ' and ' git push origin main '.
+
+      git push : When you use ' git push ' without any arguments, Git pushes the changes to the default 
+                 remote repository and branch that are configured for ur current branch.This behaviour
+                 depends on how ur repository and branches are configured. If u have set up a tracking 
+                 branch, Git will push to that branch by default. Generally this will occur when u clone
+                 the repository from github. Otherwise u need to follow the following approch.
+
+      git push origin main : This command explicity specifies the remote repository('origin') and the 
+                             branch ('main'). by using ' git push origin main ', you avoid any 
+                             ambiguity about which remote repository and branch u are pushing to.
+                             This is particularly useful in multi-remote setups or when working with
+                             multiple branches.
+
+      Before running 'git push origin main' u need to run following commands.
+
+      git branch -M main : It actually renames the current branch to main. Changes the default branch 
+                            name 'master' to 'main' .
+
+      git remote add <repository name (generally 'origin')>  <link of github repository> :
+
+                           Adds a remote repository with the name 'origin'. Specifies the URL of the 
+                           remote repository(in this case, a Github Repository).The remote repository
+                           is a version of project hosted on internet. Naming it 'origin' is a convention
+                           that refers to primary remote repository. I mean by default git uses 'origin'
+                            s repository name when u clone a repository.
+
+
+   
+   Now lets see entire workflow in commonds only.
+
+   git init
+   git add .
+   git commit -m ""
+   git remote add <Repository name> <link>
+   git branch -M <branch name>
+   git push <repository name> <branch name>
+
+   
+
+            
+
+
+
+
+
+
+
+
+
+            

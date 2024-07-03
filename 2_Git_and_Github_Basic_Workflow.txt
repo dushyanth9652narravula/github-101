@@ -139,6 +139,8 @@ Basic workflow :
    git branch -M <branch name>
    git push <repository name> <branch name>
 
+   Note : 'git push' pushes the last commit content into github.
+
    
 
             

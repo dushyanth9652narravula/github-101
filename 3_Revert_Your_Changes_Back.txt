@@ -59,4 +59,14 @@ command.
 
     Note : 'HEAD' is simply a reference or pointer to the last commit we made.
 
+Commit History 
+
+1) To Know the total commits that we have been made, we use 'git log' command.
+   
+   This 'git log' command shows all the the commit we have been made till now, along with commit-hashes
+   (an unique identification number for each commit) and author of the commit, date and time when the 
+   commit is made and it also shows which commit is stored in github now (by indicating this (name/branch))
+   and also indicates last commit with (HEAD -> Branch_name)
+   
+
        

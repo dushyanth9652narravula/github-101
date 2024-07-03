@@ -1,0 +1,62 @@
+Once we completed a commit, we can revert back the changes we have made. To do this we use 'git restore'
+command.
+
+
+    git restore : 'git restore' provides more intutive and specify way to undo changes in ur working 
+                   directly and staging area.
+
+    
+    1) Restore Working directly Files : You can discard changes in the working directory, restoring Files
+       to the last commit. To do this we use following syntax.
+
+       git restore <filename>
+
+       By using this command u can only restore the file to last commit. If u want to restore the file to 
+       particular commit we need to use the following syntax :
+
+       git restore --source=<commit-hash> --worktree <filename>
+
+       Let's breakdown the command :
+
+       --source : '--source' option specifies the source commit , tree or referene to restore from.
+                  In general we equate it with 'HEAD' which is reference to last commit. So if you
+                  equate '--source' with 'Head' then your file gets restored to last commit.If you
+                  want to restore ur file from particular commit then u need to provide commit-hash.
+                  You can get commit-hash of particular commit by using this command.
+
+                  git log : which generates commit history with commit-hashes.
+
+                  Commit-hash is simply a string.
+
+      --workfile : This option specifies that u want to restore the file in working directory.It discards
+                   the changes in the working directory and restores the file to the state in the 
+                   specified source.
+
+        
+
+        Ex : git restore --source=HEAD --worktree example.txt
+
+        if we use 'git restore .' then all the files in the directory gets restores to last commit. 
+
+    
+    2) Unstage Changes : You can remove changes from the staging area without affecting the working 
+                         directory, esentially unstaging them. To unstage the changes we use :
+
+
+                         git restore --staged <filename>
+
+                                   or
+
+                         git restore --staged . 
+
+                         (This will unstage all the changes without affecting working directory)
+
+
+    If you want to dicard and unstage changes in both working directory and staging area we use the
+    following command :
+
+    git restore --source=<commit-hash> --staged --worktree <filename>
+
+    Note : 'HEAD' is simply a reference or pointer to the last commit we made.
+
+       

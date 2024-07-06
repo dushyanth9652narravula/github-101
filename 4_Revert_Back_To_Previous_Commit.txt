@@ -170,7 +170,7 @@ project.
 
               Syntax : git diff HEAD..<Repository_Name/Branch_Name>
 
-              Ex:      git diff HEAD..<origin/main
+              Ex:      git diff HEAD..origin/main
 
 
 

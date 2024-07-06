@@ -159,5 +159,18 @@ project.
 
                                    Syntax : git switch <Branch-Name>
 
+3) git diff : 'git diff' command is used to check the changes u made in ur files. 
+
+              Suppose one of ur teammate changed the code. But u unable to see what are the changes that 
+              he/she made to this file. So check the difference we use 'git diff' command.
+
+              Syntax : git diff ./<filename>
+
+              We can check the difference between remote and local repository by using this command.
+
+              Syntax : git diff HEAD..<Repository_Name/Branch_Name>
+
+              Ex:      git diff HEAD..<origin/main
+
 
 

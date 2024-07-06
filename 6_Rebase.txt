@@ -4,7 +4,7 @@ from one branch to another.It is often used to maintain clean and linear project
 Rebase is a process to move or combine a sequence of commits to a new base commit. It's different from a 
 merge which create a new commit for itself.
 
-** Seneario 1: Squeeze the sequence of unecessary commits to single commit.
+** Scenario 1: Squeeze the sequence of unecessary commits to single commit.
 
     1) Suppose u have changed a single file three times and each time u commited that file.So in these
        case all three commits are unecessary, becuase the purpose of that file is same.So inorder to 
@@ -20,7 +20,7 @@ merge which create a new commit for itself.
        Ex : git rebase - i HEAD~3
 
 
-** Seneario 2 : Rebase From current branch into another branch
+** Scenario 2 : Rebase From current branch into another branch
 
     1) Suppose consider u are two friends working on a single project. One of ur friend wants to develop a 
        new feature, so he created a new branch name it as feature1.Now you also want to develop another

@@ -11,7 +11,7 @@ project.
        repository.)
 
 
-       ** Seneraio 1 : Changes are commited and not pushed into remote repository
+       ** Scenario 1 : Changes are commited and not pushed into remote repository
         
                        In this u made Unneccessary commit and not pushed into github repository.Now u want 
                        to delete that commit beacause HEAD is pointing to it, so if you made git push, then
@@ -94,7 +94,7 @@ project.
                                           Commit C is no longer in commit history.The changes from 'C'
                                           are dicarded from both working directory and Staging Area.
 
-       ** Seneraio 2 : Changes are commited and pushed into remote repository
+       ** Scenario 2 : Changes are commited and pushed into remote repository
 
                        In this seneraio we won't use 'git reset' command. If we use it, we can get our
                        previous state of project, but while pushing it into the remote repository then

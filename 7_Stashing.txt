@@ -1,0 +1,41 @@
+In git, Stashing allows you to temporarily save changes, that you have made to your working directory 
+without commiting them.This can be useful when you need to switch branches or perform other tasks that
+require clean directory, but you are not ready to commit your changes.
+
+Working of Stashing :
+
+    1) Stashing Changes : When u stash changes, git takes the modifications in your working directory
+                          and saves them on stack of unfinished changes that you can reapply at any time.
+                          This can be done by 'git stash' command.
+
+                          'git stash' command saves the modifications in the satck.
+
+                          You can name each stash by using the following command
+
+                          Syntax : git stash push -m "<Stash name">
+
+    2) Listing Stashes : You see the list of all stashed changes using 'git stash list'. This will show you
+                         stack of stashed you have saved.
+
+    3) Applying Stashes : Later, you can reapply the stashed changes with the command ' git stash apply'.
+                          This reapplies the most recent stash by default, but you can specify a particular
+                          stash if needed by following syntax.
+
+                          Syntax : git stash apply stash@{<number>}
+
+                          <number> : This number u can get from stash list
+
+    4) git stash pop : 'git stash pop' applies the latest stash and then drops it from stash stack. But 
+                       'git stash apply' command just applies the stash, it doesn't drop the stash from 
+                       stash stack.
+
+                       To pop specified stash use this command
+
+                       git statsh pop stash@{<number}
+
+
+    Stash is useful in these Scenario :
+
+    1) Switch branches to work on something else without losing your current changes.
+    2) Pull in updates from a remote repository without committing incomplete work.
+    3) Experiment with changes that you might not want to keep.

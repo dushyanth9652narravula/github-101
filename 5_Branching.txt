@@ -37,3 +37,13 @@ Pull Request :
 
     6) But this new branch is deleted in remote repository. To delete in local repository, use
        'git branch -d <branch-name>' command.
+
+    Note : Once you merged branches on github, pull the changes into the local repository by using
+           this command
+
+           git pull origin main
+
+           Now you can delete the branch in both local repository and remote repository
+
+           Local Repository Branch Deletion: 'git branch -d <branch-name>'
+           Remote Repository Branch Deletion : 'git push orign --delete <branch-name>'

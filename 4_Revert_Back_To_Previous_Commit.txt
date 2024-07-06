@@ -1,0 +1,163 @@
+In previous seneraio, we have seen how to restore our changes. But now we are going to see how to delete
+commit that we have made unneccessaryly. And also we will see how to checkout a patrticular state of the
+project.
+
+
+1)  Deleting Unneccessary Commits :
+
+    a) Here there are two seneraio's arises. First one is you have commited the changes and also pushes
+       into the remote resporitory (That means changes stored in remote resporitory). Second one is 
+       you have commmitd the changes and not pushed into remote repository. (Changes saved in local
+       repository.)
+
+
+       ** Seneraio 1 : Changes are commited and not pushed into remote repository
+        
+                       In this u made Unneccessary commit and not pushed into github repository.Now u want 
+                       to delete that commit beacause HEAD is pointing to it, so if you made git push, then
+                       these changes are going to stored in github.
+
+                       Now to delete the commit we use a command called 'git reset'
+
+                       git reset : The local repository contains commit history.The 'git reset' allows you 
+                                   to undo changes in both working directory and staging area,by removing
+                                   commit in commit history.It operates in three levels.
+
+                                   1) --soft
+                                   2) --mixed (default)
+                                   3) --hard 
+
+                                   1) git reset --soft :
+
+                                      Effect on Local repository : Moves the 'HEAD' to the specified commit
+                                      Effect on Staging Area : No Changes. Index remains same as it was 
+                                                               before reset. That means once we run this 
+                                                               command, the commit gets deleted in local
+                                                               repository, but content in staging area 
+                                                               before commiting the deleted commit gets
+                                                               back.
+
+                                      Effect on Working Directory : No Changes
+
+                                      Syntax : git reset --soft <commit-hash>
+
+                                      Ex: A -- B -- C (Head)
+                                       
+                                          After git reset --soft B,
+
+                                          A -- B (Head)
+
+                                          Commit C is no longer in commit history.The changes from 'C'
+                                          remains staged
+
+                                   2) git reset --mixed :
+
+                                      Effect on Local repository : Moves the 'HEAD' to the specified commit
+
+                                      Effect on Staging Area : Unstaged the Changes. The index is reset to
+                                                               match the specified commit.
+
+                                      Effect on Working Directory : No Changes
+
+                                      Syntax : git reset --mixed <Commit-Hash>
+
+                                                        (or)
+
+                                               git reset <Commit-Hash>
+
+                                      Ex: A -- B -- C (Head)
+                                       
+                                          After git reset  B,
+
+                                          A -- B (Head)
+
+                                          Commit C is no longer in commit history.The changes from 'C'
+                                          are moved to working directory but no longer staged
+
+                                    
+                                   3) git reset --hard :
+
+                                      Effect on Local repository : Moves the 'HEAD' to the specified commit
+
+                                      Effect on Staging Area :Reset the index to match the specified commit
+
+                                      Effect on Working Directory : No Changes
+
+                                      Syntax : git reset --hard <Commit-Hash>
+
+                                      Ex : A -- B -- C (Head)
+                                       
+                                          After git reset --hard B,
+
+                                          A -- B (Head)
+
+                                          Commit C is no longer in commit history.The changes from 'C'
+                                          are dicarded from both working directory and Staging Area.
+
+       ** Seneraio 2 : Changes are commited and pushed into remote repository
+
+                       In this seneraio we won't use 'git reset' command. If we use it, we can get our
+                       previous state of project, but while pushing it into the remote repository then
+                       we get an error i.e 'push operation is rejected. Because the commits in local
+                       repository and commits in remote repository doesn't match'. So we will get an 
+                       error like that. So inorder to get back to the commit we want, we need to use 
+                       'git revert' command. 
+
+                       git revert : 'git revert' command doesn't delete the commit from commit history.
+                                     But it accually made another commit by deleting the changes we 
+                                     made to get the cuurent commit.
+
+                                     For example u have two commits those are 'A' and 'B'.Now u have
+                                     created new file 'example.txt' and commited the change and pushed
+                                     into remote repository.Let's say this commit as 'C'. Now u want to
+                                     delete the commit 'C'. If you run 'git revert B' then it won't 
+                                     delete commit 'C', it will made another commit by deleting the
+                                     changes by commit 'C', i.e by deleting the 'exampe.txt' file in
+                                     both remote,local and working directory.So now u get the state
+                                     where u are in before commit 'C'
+
+                                     Syntax : git revert <Commit-Hash (To the commit you want to move)>
+
+
+2)  Checking Out Specific Commit : To checkout the Specific commit we use ' git checkout' command.
+                                   'git checkout' is used to checkout a specif commit from your
+                                   repository.This action places your repository in "detached
+                                   head state". 
+
+                                   When you run 'git checkout commit-hash' , you are telling Git to
+                                   move the 'Head' pointer to a specific commit,identified by its
+                                   hash. This means your working directory will reflect the state
+                                   of the repository at that specific commit.
+
+                                   Syntax : git checkout <Commit-Hash>
+
+                                   What happens after you checkout a commit :
+
+                                   a) Detached HEAD State :
+                                    
+                                      When you check out  a specific commit, the git enters into the 
+                                      detached head state. This means 'Head' points to the specified 
+                                      commit not to branch.Any changes u make and commit while in this
+                                      state will not be associated to any branch.
+
+                                   b) Viewing the Project's State:
+
+                                      Your working directory will be updated to match the state of the 
+                                      resporitory at the specified commit. This allows you to view 
+                                      your project  as it was at that point of time.
+
+                                   c) Creating a New Branch:
+
+                                      If you want to make changes starting from the commit and keep them,
+                                      you should create a new branch from this commit.
+    
+
+                                   This iis what happens entirely when u run git checkout command.
+
+                                   So get back into ur branch after running git checkout, we use 
+                                   'git switch' command to get into ur branch;
+
+                                   Syntax : git switch <Branch-Name>
+
+
+

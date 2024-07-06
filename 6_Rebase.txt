@@ -1,0 +1,59 @@
+'git rebase' command is a powerful and somewhat advanced feature of git that is used to integrate changes
+from one branch to another.It is often used to maintain clean and linear project history.
+
+Rebase is a process to move or combine a sequence of commits to a new base commit. It's different from a 
+merge which create a new commit for itself.
+
+** Seneario 1: Squeeze the sequence of unecessary commits to single commit.
+
+    1) Suppose u have changed a single file three times and each time u commited that file.So in these
+       case all three commits are unecessary, becuase the purpose of that file is same.So inorder to 
+       squeeze those commits into single commit we use 'git rebase' command
+
+
+       Syntax : git rebase -i HEAD~<number>
+
+       -i : This indicated command is in interacive mode.
+
+       <number> : Here u need to specify the number. if it is 3 then 3 commits are squeezed to 1.
+
+       Ex : git rebase - i HEAD~3
+
+
+** Seneario 2 : Rebase From current branch into another branch
+
+    1) Suppose consider u are two friends working on a single project. One of ur friend wants to develop a 
+       new feature, so he created a new branch name it as feature1.Now you also want to develop another
+       feature and u created a new branch name it as feature2.So ur friend completed the development of
+       feature quicker than u, and he made pull request and merge feature1 branch to main branch. Now u 
+       want to merge feature2 branch with main branch. While merging the feature2 branch with main branch
+       without knowing the changes made by feature1 ,then merge conflicts might raise.
+
+       Some of the merge conflicts are :
+       
+       1) Content conflicts : Suppose both of ur friends modifying line2 in a file present in main branch.
+                              Friend1 merged feature1 to main branch and now u want to merge the feature2
+                              to main branch then merge conflict gets arised.
+
+       There are other conflict such as Delete/Modify , Add/Add conflicts etc.
+
+       2) Delete/Modify : This conflict arises when one of u deleted the file in main and another one
+                          tries to modify the same file.Then this conflict arises.
+
+
+       So to overcome these conficts we rebase all the changes made by feature1 to our current branch
+
+       To do this we use this command
+
+       Syntax : git rebase repository_name/branch_name
+
+       Before executing this command we first fetch the remote repository ino local repository.To do this
+       we use 'git fetch'
+
+       Syntax : git fetch <repository_name> 
+
+       Ex: git fetch origin
+
+       Now we can use rebase command
+
+       Ex: git rebase origin/main

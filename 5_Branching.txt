@@ -1,0 +1,39 @@
+Branching in Git : A branch in git is a pointer to snapshot of our changes.When you create a branch, you are
+                   creating a new line of development that you can commit changes to independently of the
+                   main project.The 'main' or 'master' branch is typically default branch in a repository.
+
+Basic Branch Operations :
+
+        a) Creating a branch : Use 'git branch <branch-name>' to create a new branch.
+        b) Switching Branches : Use 'git checkout <branch-name>' or newer 'git switch <branch-name>'
+                                to move to different branches.
+        c) Creating and switching : Use 'git checkout -b <branch-name> or newer 'git switch -c 
+                                    <branch-name>' to create a new branch and switch to it
+                                    immediately.
+        d) Merging Branches : Use 'git merge <branch-name>' to merge changes from one branch to
+                              another branch.
+        e) Deleting Branches : Use 'git branch -d <branch-name>' to delete a branch.
+
+To know the importance of branching in git view this site (https://www.toolsqa.com/git/branch-in-git/)
+
+Pull Request :
+
+    Once u created a new branch and developed the new feature, now you need to merge this branch with
+    the main branch. To do this we use pull requests.
+
+    1) To do pull requests, go to github then click on pull requests.
+    2) Now click on  New pull request then choose the base branch to which you want to merge changes
+       and compare with branch i.e the banch you want to merge to base branch.
+    3) Now click on create pull request. Then add the description of the changes u have done. Then
+       in right panel you have reviewers option available. You can select name of the reviewers to
+       review your code.Finally click on create pull request. Once u click on create pull request
+       reviewers gets notified by email to review ur code.They will get the same page as you see  
+       now (Pull request page).Reviewers go to files changed tab on the top-right corner and there
+       they can see the actual changes made by you. Then can comment there if they don't understand etc.
+    4) Once the code review is completed, the reviewers will accept the pull request if they are no
+       bugs in your code.
+    5) Now click on the Merge Pull Request.Then add some comments and them click on confirm then Your
+       branch is merged with the base branch.Then u can delete the new branch.
+
+    6) But this new branch is deleted in remote repository. To delete in local repository, use
+       'git branch -d <branch-name>' command.

@@ -1,0 +1,17 @@
+Branching in Git : A branch in git is a pointer to snapshot of our changes.When you create a branch, you are
+                   creating a new line of development that you can commit changes to independently of the
+                   main project.The 'main' or 'master' branch is typically default branch in a repository.
+
+Basic Branch Operations :
+
+        a) Creating a branch : Use 'git branch <branch-name>' to create a new branch.
+        b) Switching Branches : Use 'git checkout <branch-name>' or newer 'git switch <branch-name>'
+                                to move to different branches.
+        c) Creating and switching : Use 'git checkout -b <branch-name> or newer 'git switch -c 
+                                    <branch-name>' to create a new branch and switch to it
+                                    immediately.
+        d) Merging Branches : Use 'git merge <branch-name>' to merge changes from one branch to
+                              another branch.
+        e) Deleting Branches : Use 'git branch -d <branch-name>' to delete a branch.
+
+To know the importance o a branch view this site (https://www.toolsqa.com/git/branch-in-git/)

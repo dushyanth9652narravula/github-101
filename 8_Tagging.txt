@@ -51,4 +51,18 @@ Deleting Tags : To delete a tag we use the following syntax
 
                 To delete a tag in remote repository we use the following syntax :
 
-                git push origin --delete tag v1.0
+                git push origin --delete tag <tag_name>
+
+
+Cherry Picking in Git : Cherry-Picking in Git is the process of selecting specific commits from one branch
+                        and applying them in another branch. This is useful when you want to apply particular
+                        changes from one branch to another branch without merging entire branches.Essentially
+                        you pick individual commits rather than merging all the changes from one branch to
+                        another.
+
+                        To cherry pick a commit first u need to find the commit hash of that commit.
+                        To find this we use 'git log' command.Then we need to switch to the branch, where
+                        we want to apply these changes.To do this we use 'git switch <branch_name>'. Now
+                        we cherry-pick those changes in this branch by using the following command.
+
+                        'git cherry-pick <commit-hash>'

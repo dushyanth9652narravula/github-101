@@ -1,0 +1,54 @@
+In Git, tagging is a way to mark specific points in your repository's history as being important.Typically,
+these are used to mark release points (e.g., v1.0,v2.0). Tags are immutable references to a specific commit
+and they can be used for various purposes, such as marking release versions or specific milestones in the
+project's development.
+
+There are two types of tags in Git 
+
+1) LightWeight Tags
+2) Annotated Tags
+
+1) LightWeight Tag : A LightWeight tag is essentially a pointer to specific commit.It's like  a branch that
+                     doesn't change.LightWeight tags do not store any additional information other than the
+                     commit hash they point to.
+
+                     Syntax to create a lightweight tag is :
+
+                     git tag <tag_name>
+
+                     This syntax will create a tag to the last commit we made.
+
+                     To add tags to specific commit,we use this syntax 
+
+                     git tag <tag_name> <commit-hash>
+
+
+2) Annotated Tag : Annotated tags are stored as full objects in the Git Database. They contain additional 
+                   metadata such as the tagger's name, email, date, and a tagging message.Annotated tags 
+                   are generally recommnded because they provide more information and are signd with GPG
+                   keys if needed for verification.
+
+                   To create an Annotated tag, we use the following syntax :
+
+                   git tag -a <tag_name> - m "<Description about the tag>"
+
+                   This tag also associated with last commit u made. To assign tags to specific commit we
+                   use the following syntax:
+
+                   git tag -a <tag_name> -m "<Description about the tag>" <Commit-Hash>
+
+
+After creation of tags, we need to push them into remote repository seperately. We can each tag seperately
+or we can push all tags at a time.
+
+Pushing Single Tag : 'git push origin <tag_name>
+
+Pushing all tags at a time : 'git push origin --tags
+
+Deleting Tags : To delete a tag we use the following syntax 
+
+                git tag -d <tag_name>
+
+                To delete a tag in remote repository we use the following syntax :
+
+                git push origin --delete tag v1.0
